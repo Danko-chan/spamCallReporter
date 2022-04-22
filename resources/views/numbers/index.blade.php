@@ -18,6 +18,7 @@
                         {{ $number->reported_by }}
                     </h4>
                 @endforeach
+                {{$numbers->Links()}}
             </div>
 </body>
 
