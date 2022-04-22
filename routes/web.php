@@ -19,5 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('numbers', spamNumberController::class);
+Route::resource('numbers', spamNumberController::class)->middleware('auth');;
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
