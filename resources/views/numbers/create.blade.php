@@ -3,16 +3,17 @@
 @section('content')
 
 
-<div class="container">
+<div class="container-create">
 
-        <h1>Report</h1>
+                <h1>Report Number</h1>
                 <form action="{{ route('numbers.store') }}" method="post">
                 {{ csrf_field() }}
-                <label for="number" class="report">Report Spam Number</label>
-                <input type="number" name="number" id="number" class="number">
+                
+                <label for="number" class="report">Enter Number</label>
+                <input type="number" name="number" id="number" class="number-input column">
                 
 
-                <input type="submit" value="Report Number">
+                <input type="submit" value="Report Number" class="submit-btn column">
 
                 </form>
             

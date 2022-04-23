@@ -1,19 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-
+<div class="container-profile">
+                <h1>My Reported Numbers</h1>
+                <ol>
                 @foreach ($user->numbers as $number)
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                        <h4>{{ $number->number }}</h4>
-                        <p>
-                            {{ $number->created_at }}
-                        </p>
-                        </div>
-                        
-                    </div>
+                    <li class="li-font">
+                        <h3>
+                            {{ $number->number }}
+                            
+                        </h3>
+                    </li>
                 @endforeach
+                </ol>
                     
  
 </div>  

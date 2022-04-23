@@ -3,16 +3,17 @@
 @section('content')
 
 
-<div class="container">
+<div class="container-index">
 
 <h1>Spam Numbers</h1>
                 <hr />
-                
+                <ol>
                 @foreach ($numbers as $number)
-                    <div class="well">
-                    <h3>{{ $number->number }}</h3>
                     
+                        <li>{{ $number->number }}</li>
+                   
                 @endforeach
+                </ol>
                 {{$numbers->Links()}}
                 
 </div>
