@@ -3,11 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 use App\Models\Number;
 
+
 class spamNumberController extends Controller
 {
+
+
+    public function __construct()
+    {
+      $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -39,14 +48,13 @@ class spamNumberController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'number' => 'required|min:10',
-            'reported_by' => 'required'
+            'number' => 'required|min:10|max:10',
+            
           ]);
 
         $number = new Number();
         $number->number = $request->number;
-        $number->reported_by = $request->reported_by;
-        
+        $number->user()->associate(Auth::id());
 
         if ($number->save()) {
             return redirect()->route('numbers.show', $number->id);

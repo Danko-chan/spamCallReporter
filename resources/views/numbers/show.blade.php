@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spam Numbers</title>
-</head>
-<body>
-            <div class="container">
-              <h1>  {{$number->number}}
-                {{$number->reported_by}}</h1>
-            </div>
-</body>
+@extends('layouts.app')
 
-</html>
+@section('content')
+
+
+<div class="container">
+
+<h1>  {{$number->number}}
+                {{$number->reported_by}}</h1>
+                <p>
+                  Submitted By: {{ $number->user->name }}, {{ $number->created_at->diffForHumans() }}
+                </p>
+            
+</div>
+
+
+@endsection
