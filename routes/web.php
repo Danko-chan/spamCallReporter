@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\spamNumberController;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +25,4 @@ Route::resource('numbers', spamNumberController::class)->middleware('auth');;
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/profile/{user}', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');

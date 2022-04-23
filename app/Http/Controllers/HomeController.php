@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Number;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -24,7 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $numbers = Number::orderBy('user_id', 'desc')->paginate(5);
-        return view('home')->with('numbers', $numbers);
+        
+    }
+    public function profile($id)
+    {
+        $user = User::with(['numbers'])->find($id);
+        return view('profile')->with('user', $user);
     }
 }
+

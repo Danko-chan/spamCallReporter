@@ -14,12 +14,7 @@
                         </div>
                     @endif
 
-                    @foreach ($numbers as $number)
-                    <div class="well">
-                    <h3>{{ $number->number }}</h3>
                     
-                    @endforeach
-                    {{$numbers->Links()}}
                 </div>
             </div>
         </div>
