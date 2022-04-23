@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -29,7 +29,10 @@ class HomeController extends Controller
     public function profile($id)
     {
         $user = User::with(['numbers'])->find($id);
+        if(auth::id()==$id)
         return view('profile')->with('user', $user);
+        else
+            return '404 not found';
     }
 }
 

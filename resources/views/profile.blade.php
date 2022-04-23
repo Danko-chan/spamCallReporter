@@ -13,8 +13,8 @@
                         </div>
                         
                     </div>
-                    @endforeach
+                @endforeach
                     
-
+ 
 </div>  
 @endsection
