@@ -28,7 +28,7 @@
                     {{ config('Home', 'Home') }}
                 </a>
                 <a class="navbar-brand" href="{{ url('/numbers') }}">
-                    {{ config('Spam Number List', 'Spam Number List') }}
+                    {{ config('Spam Number List', 'SpamList') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -91,7 +91,7 @@
             </div>
             
             <footer id="footer">
-                <p id="credit">created by :)</p>
+                <p id="credit">created by Danko-chan :)</p>
             </footer>
         </div>
 
