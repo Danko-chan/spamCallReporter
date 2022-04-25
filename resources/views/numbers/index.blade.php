@@ -11,10 +11,29 @@
 
                 <input type="submit" value="Report Number" class="submit-btn column btn-grad">
         </form>
-        
+
+        @guest
+        @if (Route::has('login'))
         @foreach ($numbers as $number)
-        <h3>{{$number->number}}</h3>       
+               
+               <h3 style="margin-top:10px">{{$number->number}}</h3>  
+               @endforeach
+        @endif
+        @else
+        
+        @if($search)
+        @foreach ($numbers as $number)               
+        <h3 style="margin-top:10px">{{$number->number}}</h3>  
+        <p>
+                Submitted By: {{ $number->user->name }}, {{ $number->created_at->diffForHumans() }}
+        </p>     
         @endforeach 
+        
+        <p>Not a Spam</p>
+        @else
+        
+        @endif
+        @endguest
 </div>        
 
 

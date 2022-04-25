@@ -74,10 +74,9 @@ a {
 
 /* Welcome-page-end */
 
-
 /* Create-page */
 
-.container-create {
+.container-create  {
   height: 85vh;
   width: 100%;
   display: flex;

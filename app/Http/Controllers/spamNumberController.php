@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
 
 use App\Models\Number;
+use Auth;
 
 
 class spamNumberController extends Controller
@@ -14,7 +14,7 @@ class spamNumberController extends Controller
 
     public function __construct()
     {
-      $this->middleware('auth', ['except' => ['numbers.index', 'numbers.show']]);
+      $this->middleware('auth', ['except' => ['index','show']]);
     }
 
     /**
@@ -22,7 +22,7 @@ class spamNumberController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
       $search = $request['search'] ?? "";
       if($search !=""){
@@ -30,7 +30,7 @@ class spamNumberController extends Controller
       }else {
         $numbers = Number::all();
       }
-      $data = compact('numbers');
+      $data = compact('numbers', 'search');
       return view('numbers.index')->with($data);
       
     }

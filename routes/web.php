@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\spamNumberController;
 use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,8 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('numbers', spamNumberController::class)->middleware('auth');;
-
+Route::resource('numbers', spamNumberController::class)->middleware('auth');
 
 Auth::routes();
 
