@@ -4,19 +4,18 @@
 
 
 <div class="container-index">
-        <div class="number-list">
-                <h1>Spam Numbers</h1>
-                <hr style="width:90%;text-align:left;margin-left:0">
-                <ol>
-                @foreach ($numbers as $number)
-                    
-                        <li class="li-font">{{ $number->number }}</li>
-                   
-                @endforeach
-                </ol>
-                {{$numbers->Links()}}
-        </div>         
-</div>
+        
+        <form action="" method="get">
+        
+                <input type="text" placeholder="Search Number" maxlength="10" name="search" class="number-inp column">
+
+                <input type="submit" value="Report Number" class="submit-btn column btn-grad">
+        </form>
+        
+        @foreach ($numbers as $number)
+        <h3>{{$number->number}}</h3>       
+        @endforeach 
+</div>        
 
 
 @endsection

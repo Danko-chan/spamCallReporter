@@ -42,7 +42,7 @@ a {
 .center-content{
   position: absolute;
   top: 30%;
-  left: 27%;
+  left: 30%;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -27,9 +27,7 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('Home', 'Home') }}
                 </a>
-                <a class="navbar-brand" href="{{ url('/numbers') }}">
-                    {{ config('Spam Number List', 'SpamList') }}
-                </a>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -67,6 +65,9 @@
                                     </a>
                                     <a class="dropdown-item" href="{{ route('numbers.create') }}">
                                        Report Number
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('numbers.index') }}">
+                                        Check Number
                                     </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

@@ -14,7 +14,7 @@ class spamNumberController extends Controller
 
     public function __construct()
     {
-      $this->middleware('auth', ['except' => ['index', 'show']]);
+      $this->middleware('auth', ['except' => ['numbers.index', 'numbers.show']]);
     }
 
     /**
@@ -24,10 +24,18 @@ class spamNumberController extends Controller
      */
     public function index()
     {
-        $numbers = Number::orderBy('id', 'desc')->paginate(5);
+      $search = $request['search'] ?? "";
+      if($search !=""){
+        $numbers = Number::where('number','=' ,$search)->get(); 
+      }else {
+        $numbers = Number::all();
+      }
+      $data = compact('numbers');
+      return view('numbers.index')->with($data);
       
-        return view('numbers.index')->with('numbers', $numbers);
     }
+
+
 
     /**
      * Show the form for creating a new resource.
