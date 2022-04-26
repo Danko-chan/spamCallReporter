@@ -17,8 +17,8 @@
                 @if($search)
                         @if($numbers->isNotEmpty())
                                 @foreach ($numbers as $number)
-                                        <h3 style="margin-top:10px">{{$number->number}}</h3>  
-                                        <p>{{ $number->created_at->diffForHumans() }}</p>
+                                        <h3 style="margin-top:10px">{{$number->number}}</h3>                                       
+                                        <p>Reported {{ $number->created_at->diffForHumans() }}</p>
                                 @endforeach
                                 @else
                                 <p>Not a Spam</p>
