@@ -14,23 +14,32 @@
 
         @guest
         @if (Route::has('login'))
-        @foreach ($numbers as $number)
-               
-               <h3 style="margin-top:10px">{{$number->number}}</h3>  
-               @endforeach
+                @if($search)
+                        @foreach ($numbers as $number)
+                                <h3 style="margin-top:10px">{{$number->number}}</h3>  
+                                <p>{{ $number->created_at->diffForHumans() }}</p>
+                        @endforeach
+                        <p>Not a Spam</p>
+                        <a  class="back-btn" href="{{route('numbers.create')}}">Report</a>
+                        <hr style="margin-top:0; width:5%" >
+                        @else
+               @endif
         @endif
+
         @else
         
         @if($search)
-        @foreach ($numbers as $number)               
-        <h3 style="margin-top:10px">{{$number->number}}</h3>  
-        <p>
-                Submitted By: {{ $number->user->name }}, {{ $number->created_at->diffForHumans() }}
-        </p>     
-        @endforeach 
+                @foreach ($numbers as $number)               
+                <h3 style="margin-top:10px">{{$number->number}}</h3>  
+                <p>
+                        Submitted By: {{ $number->user->name }}, {{ $number->created_at->diffForHumans() }}
+                </p>     
+                @endforeach 
         
-        <p>Not a Spam</p>
-        @else
+                <p>Not a Spam</p>
+                <a  class="back-btn" href="{{route('numbers.create')}}">Report</a>
+                <hr style="margin-top:0; width:5%" >
+                @else
         
         @endif
         @endguest
