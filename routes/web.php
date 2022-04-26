@@ -20,7 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('numbers', spamNumberController::class)->middleware('auth');
+Route::resource('numbers', spamNumberController::class);
 
 Auth::routes();
 
