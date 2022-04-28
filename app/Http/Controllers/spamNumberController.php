@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\File;
+use Illuminate\Support\Storage;
 use App\Models\Number;
 use Auth;
 
@@ -62,17 +63,20 @@ class spamNumberController extends Controller
           ]);
         
 
-      //   if ($request->file('pdf') == null) {
-      //     $file = "";
-      // }else{
-      //   $filename = time() . "spam." . $request->file('pdf')->hashName();
-      //    $file =  $request->file('pdf')->store('public/uploads/');  
-      // }
+        if ($request->file('file') == null) {
+          $file = "";
+      }else{
+        $filename = time() . $request->file('file')->hashName();
+         $file =  $request->file('file')->store('uploads');  
+      }
+
+
 
         $number = new Number();
         $number->number = $request->number;
         $number->description = $request->description;
         $number->label = $request->label;
+        $number->filename = $filename;
         $number->user()->associate(Auth::id());
 
         if ($number->save()) {

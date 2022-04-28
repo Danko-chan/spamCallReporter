@@ -7,7 +7,7 @@
 
                 <h1>Report Number</h1>
                 <hr style="width:21%;text-align:left;margin-top:0">
-                <form action="{{ route('numbers.store') }}" method="post">
+                <form action="{{ route('numbers.store') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 
                 <!-- <label for="number" class="number-lbl">Enter Number</label> -->
@@ -23,7 +23,7 @@
                     <label for="vehicle3"> Scam caller</label>
                 </div> 
 
-                <!-- <input type="file" name="pdf" id="pdf" class="desc-inp column">  -->
+                <input type="file" name="file" id="pdf" class="desc-inp column"> 
 
                 <input type="submit" value="Report Number" class="submit-btn column btn-grad">
 

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->char('number');
             $table->text('description')->nullable();
             $table->enum('label', ['spam caller', 'sales caller', 'scam caller']);
+            $table->string('filename')->nullable();
             $table->timestamps();
             $table->charset = 'utf8mb4';
             $table->collation = 'utf8mb4_unicode_ci';
