@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\File;
 use App\Models\Number;
 use Auth;
 
@@ -57,11 +57,22 @@ class spamNumberController extends Controller
     {
         $this->validate($request, [
             'number' => 'required|min:10|max:10',
-            
+            'description' => 'required',
+            'label' => 'required'
           ]);
+        
+
+      //   if ($request->file('pdf') == null) {
+      //     $file = "";
+      // }else{
+      //   $filename = time() . "spam." . $request->file('pdf')->hashName();
+      //    $file =  $request->file('pdf')->store('public/uploads/');  
+      // }
 
         $number = new Number();
         $number->number = $request->number;
+        $number->description = $request->description;
+        $number->label = $request->label;
         $number->user()->associate(Auth::id());
 
         if ($number->save()) {

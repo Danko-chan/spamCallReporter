@@ -12,6 +12,18 @@
                 
                 <!-- <label for="number" class="number-lbl">Enter Number</label> -->
                 <input type="text" placeholder="Enter Number" maxlength="10" name="number" id="number" class="number-inp column">
+                <input type="textarea" placeholder="Enter Description"  name="description" id="number" class="desc-inp column">
+                
+                <div class="label">
+                    <input type="radio" id="" name="label" value="spam caller">
+                    <label for="vehicle1"> Spam caller</label><br>
+                    <input type="radio" id="" name="label" value="sales caller">
+                    <label for="vehicle2"> Sales caller</label><br>
+                    <input type="radio" id="" name="label" value="scam caller">
+                    <label for="vehicle3"> Scam caller</label>
+                </div> 
+
+                <!-- <input type="file" name="pdf" id="pdf" class="desc-inp column">  -->
 
                 <input type="submit" value="Report Number" class="submit-btn column btn-grad">
 

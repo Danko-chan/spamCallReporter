@@ -93,6 +93,17 @@ a {
   width: 15rem;
   height: 2.1rem;
 }
+.desc-inp {
+  background-color: #414345;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1.6rem;
+  width: 15rem;
+  height: 2.1rem;
+}
+.label{
+  margin-top: 1.6rem;
+}
 .submit-btn {
  margin: auto;
  margin-top: 2rem ;

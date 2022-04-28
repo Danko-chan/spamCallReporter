@@ -16,7 +16,11 @@ return new class extends Migration
         Schema::create('numbers', function (Blueprint $table) {
             $table->id();
             $table->char('number');
+            $table->text('description')->nullable();
+            $table->enum('label', ['spam caller', 'sales caller', 'scam caller']);
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
         });
     }
 
