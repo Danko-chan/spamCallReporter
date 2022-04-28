@@ -9,7 +9,7 @@
         
                 <input type="text" placeholder="Search Number" maxlength="10" name="search" class="number-inp column">
 
-                <input type="submit" value="Report Number" class="submit-btn column btn-grad">
+                <input type="submit" value="Check Number" class="submit-btn column btn-grad">
         </form>
 
         @guest
