@@ -10,7 +10,7 @@
                 <form action="{{ route('numbers.store') }}" method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 
-                <!-- <label for="number" class="number-lbl">Enter Number</label> -->
+                
                 <input type="text" placeholder="Enter Number" maxlength="10" name="number" id="number" class="number-inp column">
                 <input type="textarea" placeholder="Enter Description"  name="description" id="number" class="desc-inp column">
                 
