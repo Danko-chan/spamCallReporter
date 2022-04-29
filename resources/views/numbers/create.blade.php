@@ -23,7 +23,7 @@
                     <label for="vehicle3"> Scam caller</label>
                 </div> 
 
-                <input type="file" name="file" id="pdf" class="desc-inp column"> 
+                <!-- <input type="file" name="file" class="desc-inp column">  -->
 
                 <input type="submit" value="Report Number" class="submit-btn column btn-grad">
 

@@ -63,12 +63,12 @@ class spamNumberController extends Controller
           ]);
         
 
-        if ($request->file('file') == null) {
-          $file = "";
-      }else{
-        $filename = time() . $request->file('file')->hashName();
-         $file =  $request->file('file')->store('uploads');  
-      }
+      //   if ($request->file('file') == null) {
+      //     $file = "";
+      // }else{
+      //   $filename = time() . $request->file('file')->hashName();
+      //    $file =  $request->file('file')->store('uploads');  
+      // }
 
 
 
@@ -76,7 +76,7 @@ class spamNumberController extends Controller
         $number->number = $request->number;
         $number->description = $request->description;
         $number->label = $request->label;
-        $number->filename = $filename;
+        // $number->filename = $filename;
         $number->user()->associate(Auth::id());
 
         if ($number->save()) {
